@@ -10,3 +10,21 @@ In the constructor argument, transform the tuple that you get as an input into a
 
 Weight: 1
 '''
+
+import numpy as np
+
+class Vehicle:
+
+    def __init__(self, type, velocity, colour, electric):
+        self.type = str(type)
+        self.velocity = np.array(velocity) 
+        self.colour = str(colour)
+        self.electric = bool(electric)
+        
+    def info(self):
+        print(f"This vehicle is a {self.colour} {self.type}. It travels at a velocity of {self.velocity}. It is electric: {self.electric}.")
+        # To test this works
+
+my_vehicle = Vehicle("Car", (3, 4), "black", True )
+my_vehicle.info()
+
